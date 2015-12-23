@@ -8,7 +8,7 @@ namespace CQS.Demo.Business.Repositories
     {
         public IDbConnection CreateConnection()
         {
-            return new SqlConnection(@"Server=JJGUS2\SQLEXPRESS;Database=Store;Trusted_Connection=True;");
+            return new SqlConnection(@"Server=.\SQLEXPRESS;Database=Store;Trusted_Connection=True;");
         }
     }
 }
