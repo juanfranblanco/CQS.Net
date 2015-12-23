@@ -1,0 +1,4 @@
+namespace Infrastructure.Repository.SqlGenerator
+{
+    
+}

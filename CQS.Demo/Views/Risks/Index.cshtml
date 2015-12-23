@@ -1,0 +1,82 @@
+﻿@using CQS.Demo.Business.Validation
+@using CQS.Demo.Models
+@model IEnumerable<QuoteRiskCreateCommand>
+
+@{
+    ViewBag.Title = "RisksView";
+}
+
+<h2>Risks</h2>
+
+@Html.AntiForgeryToken() 
+
+ 
+    <ul class="alert alert-danger" id="validationErrors"></ul>
+
+
+@(Html.Kendo().Grid<QuoteRiskCreateCommand>()
+.Name("Grid")
+.Columns(columns =>
+{
+    columns.Bound(c => c.Name).Width(140);
+    columns.Bound(c => c.Address1).Width(190);
+    columns.Bound(c => c.Address2);
+    columns.Bound(c => c.PostCode).Width(110);
+    columns.Command(command => { command.Edit(); command.Destroy(); }).Width(172);
+})
+.ToolBar(toolbar => toolbar.Create())
+.Editable(editable => editable.Mode(GridEditMode.InLine))
+
+.Pageable(pageable => pageable
+            .PreviousNext(true) 
+            .PageSizes(true)
+            .ButtonCount(5))
+.DataSource(dataSource => dataSource
+    .Ajax()
+    .PageSize(2) // on the dataSource we set the page size, server operation etc
+    .ServerOperation(true)
+    .Events(events => events.Error("error_handler"))
+    .Model(model => model.Id(p => p.RiskId))
+        .Read(read => read.Action("Risks_Read", "Risks").Data("sendAntiForgery"))
+        .Create(create => create.Action("Risks_Create", "Risks").Data("sendAntiForgery"))
+        .Update(update => update.Action("Risks_Update", "Risks").Data("sendAntiForgery"))
+        .Destroy(destroy => destroy.Action("Risks_Destroy", "Risks").Data("sendAntiForgery"))                        
+)
+)
+
+
+<script type="text/javascript">
+
+    function sendAntiForgery() {
+        return { "__RequestVerificationToken": $('input[name=__RequestVerificationToken]').val() }
+    }
+    
+    function error_handler(e) {
+        if (e.errors) {
+            var grid = $("#Grid").data("kendoGrid");
+            var validationTemplate = kendo.template($("#validationMessageTemplate").html());
+            grid.one("dataBinding", function (args) {
+                args.preventDefault();
+
+                $.each(e.errors, function (propertyName) {
+                    var renderedTemplate = validationTemplate({ field: propertyName, messages: this.errors });
+                    $("#validationErrors").append(renderedTemplate);
+                });
+            });
+        }
+    }
+
+</script>
+
+<script type="text/x-kendo-template" id="validationMessageTemplate">
+    # if (messages.length) { #
+    <li>
+        #=field#
+        <ul>
+            # for (var i = 0; i < messages.length; ++i) { #
+            <li>#= messages[i] #</li>
+            # } #
+        </ul>
+    </li>
+    # } #
+</script>

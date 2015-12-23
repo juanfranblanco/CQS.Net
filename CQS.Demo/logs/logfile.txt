@@ -1,0 +1,22 @@
+2014-06-12 18:04:00.5928 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.RiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Pooh
+2014-06-12 18:04:04.4307 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.RiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Pooh
+2014-06-12 18:04:06.2510 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.RiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Pooh
+2014-06-12 18:04:07.9688 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.RiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Pooh
+2014-06-20 10:54:12.6096 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.QuoteRiskUpdateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Validation failed: 
+ -- 'Policy Id' must be greater than '100'.
+2014-06-20 10:54:14.4382 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.QuoteRiskUpdateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Validation failed: 
+ -- 'Policy Id' must be greater than '100'.
+2014-06-20 10:54:19.6236 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.QuoteRiskUpdateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Validation failed: 
+ -- 'Policy Id' must be greater than '100'.
+2014-06-20 10:54:16.0983 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.QuoteRiskUpdateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Validation failed: 
+ -- 'Policy Id' must be greater than '100'.
+2014-06-20 10:54:14.4382 GLEAMS.App_Start.CommandHandlerExceptionDecorator`1[[GLEAMS.Business.Validation.QuoteRiskUpdateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] Validation failed: 
+ -- 'Policy Id' must be greater than '100'.
+2014-06-20 15:10:40.5137 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh
+2014-06-20 15:12:29.1216 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh
+2014-06-20 15:14:56.9327 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh
+2014-06-20 15:15:35.0746 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh
+2014-06-20 15:16:01.1427 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh
+2014-06-20 15:59:06.1462 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh
+2014-06-20 15:59:22.6651 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh
+2014-06-20 15:59:32.8248 Gleams.Infrastructure.Decorators.ExceptionLoggerCommandHandlerDecorator`1[[GLEAMS.Business.Validation.QuoteRiskCreateCommand, GLEAMS.Business, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] pooh

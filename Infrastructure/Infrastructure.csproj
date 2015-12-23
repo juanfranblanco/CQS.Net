@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1569831-F864-43FF-AF89-CA9A06C8B623}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infrastructure</RootNamespace>
+    <AssemblyName>Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper-Async.1.03\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\packages\FluentValidation.5.3.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.3.0.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector">
+      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Diagnostics">
+      <HintPath>..\packages\SimpleInjector.2.5.0\lib\net45\SimpleInjector.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CachedAttribute.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="Caching\CacheResult.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="CQS\Caching\IQueryCacheHandler.cs" />
+    <Compile Include="CQS\Caching\QueryCacheHandler.cs" />
+    <Compile Include="CQS\FindEntityQuery.cs" />
+    <Compile Include="CQS\FindAllEntitiesQuery.cs" />
+    <Compile Include="CQS\FindAllEntitiesQueryHandler.cs" />
+    <Compile Include="CQS\FindEntityQueryHandler.cs" />
+    <Compile Include="CQS\FindPagedQuery.cs" />
+    <Compile Include="CQS\FindPagedQueryGenericHandler.cs" />
+    <Compile Include="CQS\FindQueryGenericHandler.cs" />
+    <Compile Include="CQS\ICommand.cs" />
+    <Compile Include="CQS\ICommandHandler.cs" />
+    <Compile Include="Decorators\CacheQueryHandlerDecorator.cs" />
+    <Compile Include="Decorators\ExceptionLoggerCommandHandlerDecorator.cs" />
+    <Compile Include="Decorators\TransactionalCommandHandlerDecorator.cs" />
+    <Compile Include="Decorators\ExceptionLoggerQueryHandlerDecorator.cs" />
+    <Compile Include="Decorators\ValidationCommandHandlerDecorator.cs" />
+    <Compile Include="Decorators\ValidationQueryHandlerDecorator.cs" />
+    <Compile Include="Repository\IDbConnectionFactory.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\IGenericAsyncRepository.cs" />
+    <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="CQS\IQuery.cs" />
+    <Compile Include="CQS\IQueryHandler.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\NLogLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleInjection\ContextDependentExtensions.cs" />
+    <Compile Include="SimpleInjection\DependencyContext.cs" />
+    <Compile Include="Repository\SqlGenerator\Attributes\Deleted.cs" />
+    <Compile Include="Repository\SqlGenerator\Attributes\KeyProperty.cs" />
+    <Compile Include="Repository\SqlGenerator\Attributes\NonStored.cs" />
+    <Compile Include="Repository\SqlGenerator\Attributes\StatusProperty.cs" />
+    <Compile Include="Repository\SqlGenerator\Attributes\StoredAs.cs" />
+    <Compile Include="Repository\SqlGenerator\EntityMetadata.cs" />
+    <Compile Include="Repository\SqlGenerator\IEntityMetadata.cs" />
+    <Compile Include="Repository\SqlGenerator\ISqlDeleteGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\ISqlGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\ISqlInsertGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\ISqlSelectGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\ISqlUpdateGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\ISqlWhereGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\PropertyMetadata.cs" />
+    <Compile Include="Repository\SqlGenerator\SqlDeleteGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\SqlInsertGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\SqlSelectGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\SqlUpdateGenerator.cs" />
+    <Compile Include="Repository\SqlGenerator\SqlWhereGenerator.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="ValueObjects\PageResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
